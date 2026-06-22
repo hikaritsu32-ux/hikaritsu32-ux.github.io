@@ -26,6 +26,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Build with Astro
         uses: withastro/action@v3   # 自动检测包管理器、安装、build
+        with:
+          node-version: 24          # Astro 7 要求 Node>=22.12,默认的 20 会失败
 
   deploy:
     needs: build
